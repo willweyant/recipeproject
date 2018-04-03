@@ -52,6 +52,8 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         guacRecipe.setNote(new Note("Blah blah blah", guacRecipe));
         guacRecipe.addIngredient(new Ingredient("avocados", new BigDecimal("2"),
                 unitOfMeasureRepository.findByDescription("Each").get()));
+        guacRecipe.addIngredient(new Ingredient("kosher salt", new BigDecimal(".5"),
+                unitOfMeasureRepository.findByDescription("Teaspoon").get()));
         guacRecipe.getCategories().add(categoryRepository.findByDescription("American").get());
         guacRecipe.getCategories().add(categoryRepository.findByDescription("Mexican").get());
         recipes.add(guacRecipe);
@@ -68,6 +70,8 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         tacoRecipe.setNote(new Note("Blah blah blah blah", tacoRecipe));
         tacoRecipe.addIngredient(new Ingredient("boneless/skinless chicken thighs", new BigDecimal("6"),
                 unitOfMeasureRepository.findByDescription("Each").get()));
+        tacoRecipe.addIngredient(new Ingredient("ancho chili powder", new BigDecimal("2"),
+                unitOfMeasureRepository.findByDescription("Teaspoon").get()));
         tacoRecipe.getCategories().add(categoryRepository.findByDescription("American").get());
         tacoRecipe.getCategories().add(categoryRepository.findByDescription("Mexican").get());
         recipes.add(tacoRecipe);
