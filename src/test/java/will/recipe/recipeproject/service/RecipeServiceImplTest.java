@@ -7,6 +7,7 @@ import org.mockito.MockitoAnnotations;
 import will.recipe.recipeproject.converter.RecipeCommandToRecipe;
 import will.recipe.recipeproject.converter.RecipeToRecipeCommand;
 import will.recipe.recipeproject.domain.Recipe;
+import will.recipe.recipeproject.exceptions.NotFoundException;
 import will.recipe.recipeproject.repository.RecipeRepository;
 
 import java.util.HashSet;
@@ -74,5 +75,19 @@ public class RecipeServiceImplTest {
 
         //then
         verify(recipeRepository, times(1)).deleteById(idToDelete);
+    }
+
+    @Test(expected = NotFoundException.class)
+    public void testGetRecipeByIdNotFound() {
+        //given
+        final Optional<Recipe> recipeOptional = Optional.empty();
+
+        when(recipeRepository.findById(anyLong())).thenReturn(recipeOptional);
+
+        //when
+        final Recipe recipe = recipeService.findById(1L);
+
+        //then
+        //exception should be thrown
     }
 }

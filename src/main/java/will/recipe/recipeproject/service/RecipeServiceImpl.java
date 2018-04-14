@@ -7,6 +7,7 @@ import will.recipe.recipeproject.command.RecipeCommand;
 import will.recipe.recipeproject.converter.RecipeCommandToRecipe;
 import will.recipe.recipeproject.converter.RecipeToRecipeCommand;
 import will.recipe.recipeproject.domain.Recipe;
+import will.recipe.recipeproject.exceptions.NotFoundException;
 import will.recipe.recipeproject.repository.RecipeRepository;
 
 import java.util.HashSet;
@@ -40,7 +41,7 @@ public class RecipeServiceImpl implements RecipeService {
         final Optional<Recipe> recipeOptional = recipeRepository.findById(id);
 
         if (!recipeOptional.isPresent()) {
-            throw new RuntimeException("Recipe Not Found");
+            throw new NotFoundException("Recipe Not Found. For id value: " + id);
         }
 
         return recipeOptional.get();
