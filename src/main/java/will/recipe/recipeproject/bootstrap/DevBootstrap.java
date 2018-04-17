@@ -41,6 +41,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
     private List<Recipe> getRecipes() {
         final List<Recipe> recipes = new ArrayList<Recipe>();
         final Recipe guacRecipe = new Recipe();
+
         guacRecipe.setDifficulty(Difficulty.EASY);
         guacRecipe.setCookTime(0);
         guacRecipe.setDescription("Perfect Guacamole");
