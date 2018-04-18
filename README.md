@@ -1,8 +1,8 @@
 [![CircleCI](https://circleci.com/gh/willweyant/recipeproject.svg?style=svg)](https://circleci.com/gh/willweyant/recipeproject)
 
 [![codecov](https://codecov.io/gh/willweyant/recipeproject/branch/master/graph/badge.svg)](https://codecov.io/gh/willweyant/recipeproject)
-# spring5-mongo-recipe-app
-Recipe Application Using MongoDB
+# Recipe Project
+Recipe Application Using MySQL
 
 This repository is for an example application built in my Spring Framework 5 - Beginner to Guru
 
